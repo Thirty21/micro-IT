@@ -3,9 +3,56 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Ecommerce</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
-    <h1>test</h1>
+<body class="bg-gray-100">
+    <!-- Navbar -->
+    <nav class="bg-white shadow-md py-4 rounded-2xl">
+        <div class="container mx-auto flex items-center justify-between px-6">
+            <!-- Logo -->
+            <a href="#" class="text-black text-2xl font-bold">Ecommerce</a>
+
+            <!-- Menu for Desktop -->
+            <ul class="hidden md:flex space-x-6">
+                <li><a href="#" class="text-gray-700 hover:text-blue-500">Home</a></li>
+                <li><a href="#" class="text-gray-700 hover:text-blue-500">Products</a></li>
+                <li><a href="#" class="text-gray-700 hover:text-blue-500">About</a></li>
+                <li><a href="#" class="text-gray-700 hover:text-blue-500">Contact</a></li>
+            </ul>
+
+            <!-- Search Box -->
+            <div class="hidden md:block">
+                <input type="text" class="border border-gray-300 p-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Search...">
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button id="menu-toggle" class="md:hidden focus:outline-none">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                </svg>
+            </button>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden flex flex-col items-center mt-4 space-y-4">
+            <a href="#" class="text-gray-700 hover:text-blue-500">Home</a>
+            <a href="#" class="text-gray-700 hover:text-blue-500">Products</a>
+            <a href="#" class="text-gray-700 hover:text-blue-500">About</a>
+            <a href="#" class="text-gray-700 hover:text-blue-500">Contact</a>
+            <input type="text" class="border border-gray-300 p-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 w-3/4" placeholder="Search...">
+        </div>
+    </nav>
+
+    <!-- JavaScript untuk Menu Mobile -->
+    <script>
+        const menuToggle = document.getElementById("menu-toggle");
+        const mobileMenu = document.getElementById("mobile-menu");
+
+        menuToggle.addEventListener("click", () => {
+            mobileMenu.classList.toggle("hidden");
+        });
+    </script>
 </body>
 </html>
